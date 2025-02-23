@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">TIME</th>
+                <th scope="col">AMOUNT</th>
+                <th scope="col">CATEGORY</th>
+                <th scope="col">DETAIL</th>
+                <th scope="col">FUND</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in infos %}
+                <tr>
+                    <td> {{info.time}} </td>
+                    <td> {{info.amount | vnd}} </td>
+                    <td> {{info.category}} </td>
+                    <td> {{info.detail}} </td>
+                    <td> {{info.fund_name}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <div>
+        <p class="mb-3 small text-center text-muted">
+            Your history of transactions
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">AMOUNT</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fund in funds %}
+                <tr>
+                    <td> {{fund.name}} </td>
+                    <td> {{fund.amount | vnd}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <p class="mb-3 small text-center text-muted">
+            These are your funds and the amount in them
+        </p>
+    </div>
+{% endblock %}

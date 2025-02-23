@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/update" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="amount" placeholder="Amount" type="number" >
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="detail" placeholder="Detail" type="text">
+        </div>
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="category">
+                <option disabled selected value="">Category</option>
+                {% for ctg in category %}
+                    <option value="{{ ctg.name }}">{{ ctg.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+        <select class="form-select mx-auto w-auto" name="funds">
+            <option disabled selected value="">Funds</option>
+            {% for fund in funds %}
+                <option value="{{ fund.name }}">{{ fund.name }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+    <div>
+        <p class="mb-3 small text-center text-muted">
+            You can add transaction or update your fund here
+        </p>
+    </div>
+{% endblock %}

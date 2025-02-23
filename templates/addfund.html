@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/addfund" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="name" placeholder="Name" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="amount" placeholder="Amount" type="number" min="0" >
+        </div>
+        <button class="btn btn-primary" type="submit">Add fund</button>
+    </form>
+    <div>
+        <p class="mb-3 small text-center text-muted">
+            You can add new fund here
+        </p>
+    </div>
+{% endblock %}
